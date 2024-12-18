@@ -9,37 +9,79 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <script defer src="../routes/plot.js"></script>
     <style>
-        .chart-container {
-            max-width: 90%; /* Max width of charts */
-            margin: 0 auto; /* Center the charts */
-            height: 350px; /* Set fixed height */
+        body {
+            background-color: #f8f9fa; /* Simple light grey background */
+            color: #333; /* Dark text for readability */
+            font-family: 'Arial', sans-serif;
         }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #333; /* Dark color for heading */
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        /* Chart Container */
+        .chart-container {
+            max-width: 90%;
+            margin: 0 auto;
+            height: 350px;
+        }
+
         canvas {
             max-height: 100%;
             max-width: 100%;
         }
+
+        /* Chart Card */
         .chart-card {
-            background-color: #ffffff; /* White background for the card */
-            padding: 20px; /* Add padding around the chart */
+            background-color: #ffffff; /* Solid white background for charts */
+            padding: 20px;
             border-radius: 12px; /* Rounded corners */
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-            margin-bottom: 30px; /* Add space between charts */
+            margin-bottom: 30px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .chart-card:hover {
-            transform: translateY(-5px); /* Hover effect to lift the card */
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
         }
+
+        /* Chart Description */
         .chart-description {
-            text-align: center; /* Center the description text */
+            text-align: center;
             margin-top: 10px;
             font-size: 16px;
-            color: #333; /* Dark color for the text */
+            color: #555; /* Slightly lighter text for descriptions */
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+            background-color: #f1f1f1; /* Light grey footer background */
+            color: #333; /* Dark text for footer */
+        }
+
+        footer a {
+            color: #007bff; /* Bootstrap primary color */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #0056b3; /* Darker hover color */
         }
     </style>
 </head>
-<body class="bg-light">
-
+<body>
 <div class="container my-5">
     <h1 class="text-center mb-5">Student Feedback Dashboard</h1>
     <div id="dashboard">
@@ -77,5 +119,8 @@
     </div>
 </div>
 
+<footer>
+    <p>© 2024 Student Feedback Dashboard - All Rights Reserved</p>
+</footer>
 </body>
 </html>

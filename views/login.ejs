@@ -1,34 +1,68 @@
-<div class="row mt-5">
-    <div class="col-md-6 m-auto">
-      <div class="card card-body">
-        <h1 class="text-center mb-3"><i class="fas fa-sign-in-alt"></i>  Login</h1>
-        <%- include('partials/messages') %>
-        <form action="/users/login" method="POST">
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              class="form-control"
-              placeholder="Enter Email"
-            />
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              class="form-control"
-              placeholder="Enter Password"
-            />
-          </div>
-          <button type="submit" class="btn btn-primary btn-block">Login</button>
-        </form>
-        <p class="lead mt-4">
-          No Account? <a href="/users/register">Register,  </a><a href="/users/admin">Admin</a>
-        </p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      /* Background image styling */
+      body {
+        background: url('/images/Ip.jpeg') no-repeat center center fixed;
+        background-size: cover; /* Ensures the image covers the entire viewport */
+        background-position: center;
+        background-attachment: fixed; /* Keeps the image fixed during scrolling */
+      }
+
+      .row.mt-5 {
+        min-height: 100vh; /* Ensure the row takes full height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .card {
+        background-color: rgba(255, 255, 255, 0.8); /* Slight transparency to make the form readable over the background */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row mt-5">
+      <div class="col-md-6 m-auto">
+        <div class="card card-body">
+          <h1 class="text-center mb-3"><i class="fas fa-sign-in-alt"></i> Login</h1>
+          <%- include('partials/messages') %>
+          <form action="/users/login" method="POST">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-control"
+                placeholder="Enter Email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="form-control"
+                placeholder="Enter Password"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+          </form>
+          <p class="lead mt-4">
+            No Account? <a href="/users/register">Register</a>, <a href="/users/admin">Admin</a>
+          </p>
+        </div>
       </div>
     </div>
-  </div>
+  </body>
+</html>

@@ -1,28 +1,138 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Login</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+  <style>
+    /* Background image for the body */
+    body {
+      background: url('/images/Ip.jpeg') no-repeat center center fixed; /* Background image */
+      background-size: cover; /* Ensure the image covers the entire page */
+      background-position: center;
+      background-attachment: fixed;
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    /* Card with white background */
+    .card {
+      background: rgba(255, 255, 255, 0.8); /* Slight transparency to make it readable over the background */
+      color: #333;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Header with black background */
+    .card-header {
+      background: #000; /* Black header */
+      color: white;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      padding: 15px;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+
+    .card-body {
+      padding: 25px;
+    }
+
+    /* Input field animations with light grey borders */
+    .form-control {
+      background-color: #fff;
+      color: #333;
+      border: 1px solid #ccc; /* Light grey border */
+      border-radius: 8px;
+      padding: 10px;
+      transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .form-control:focus {
+      box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
+      transform: scale(1.03);
+      background-color: rgba(230, 240, 255, 0.5);
+    }
+
+    /* Button with calming teal color */
+    .btn-primary {
+      background-color: #20c997; /* Calming teal */
+      color: white;
+      border: none;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 8px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #17a28b; /* Darker teal on hover */
+      transform: translateY(-3px);
+    }
+
+    .btn-primary:active {
+      background-color: #138d75; /* Even darker teal when clicked */
+      transform: translateY(1px);
+    }
+
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 10px;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0;
+      transition: transform 0.5s, opacity 0.5s;
+    }
+
+    .btn-primary:active::after {
+      transform: translate(-50%, -50%) scale(15);
+      opacity: 0.2;
+      transition: 0s;
+    }
+
+    /* Responsive design */
+    .container {
+      max-width: 400px;
+    }
+  </style>
 </head>
 <body>
-  <div class="container" style="padding: 100px;">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header">
-            <h2>Admin Login</h2>
-            <%- include('partials/messages') %>
+  <div class="container">
+    <div class="card">
+      <div class="card-header">
+        Admin Login
+      </div>
+      <div class="card-body">
+        <form action="/users/admin" method="POST">
+          <div class="mb-3">
+            <label for="password" class="form-label">Key:</label>
+            <input type="password" id="password" name="password" class="form-control" required>
           </div>
-          <div class="card-body">
-            <form action="/users/admin" method="POST" >
-              <div class="mb-3">
-                <label for="password" class="form-label">Key:</label>
-                <input type="password" id="password" name="password" class="form-control" required>
-              </div>
-              <button type="submit" class="btn btn-primary btn-block" style="background-color: #F55A5A; color: white;">Login</button>
-            </form>
-          </div>
-        </div>
+          <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </form>
       </div>
     </div>
   </div>
